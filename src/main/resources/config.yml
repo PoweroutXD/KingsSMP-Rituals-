@@ -1,0 +1,16 @@
+# KingsSMP Rituals configuration
+ritual-duration-seconds: 1800   # 30 minutes
+cooldowns:
+  DRAGON_BONE_BLADE: 300
+  AVIAN_TRIDENT: 180
+  VOID_BOW: 10
+abilities:
+  DRAGON_BONE_BLADE-duration: 300
+  AVIAN_TRIDENT-duration: 180
+items-enabled:
+  DRAGON_BONE_BLADE: true
+  LIFE_STEALER: true
+  AVIAN_TRIDENT: true
+  VOID_BOW: true
+  KINGS_CROWN: true
+  BUCKET_OF_MULK: true

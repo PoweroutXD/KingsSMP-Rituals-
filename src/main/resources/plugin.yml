@@ -1,0 +1,27 @@
+name: KingsSMP-Rituals
+main: com.kingssmp.rituals.KingsSMPPlugin
+version: 1.0.0
+api-version: '1.21'
+author: Lisa+ChatGPT
+description: Ritual crafting + PvP items for Kings SMP
+commands:
+  ability:
+    description: Activate the ability of the held Kings SMP item
+    usage: /ability activate
+    aliases: [ksmp]
+    permission: kingssmp.use
+  ksmpgive:
+    description: Give yourself a Kings SMP custom item
+    usage: /ksmpgive <item>
+    permission: kingssmp.admin
+  dragonblade:
+    description: Dragon Bone Blade abilities (breath|ride)
+    usage: /dragonblade <breath|ride>
+    permission: kingssmp.use
+permissions:
+  kingssmp.use:
+    description: Allow using Kings SMP items
+    default: true
+  kingssmp.admin:
+    description: Admin commands for Kings SMP plugin
+    default: op
