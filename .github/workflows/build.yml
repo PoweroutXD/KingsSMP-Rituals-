@@ -3,13 +3,12 @@ name: Build KingsSMP-Rituals
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -21,8 +20,11 @@ jobs:
           java-version: '17'
           cache: 'maven'
 
-      - name: Build with Maven
-        run: mvn -B -e -DskipTests clean package
+      - name: Clear stale Paper cache
+        run: rm -rf ~/.m2/repository/io/papermc
+
+      - name: Build with Maven (force fresh snapshots, show full errors)
+        run: mvn -B -U -e -DskipTests clean package
 
       - name: Upload plugin jar
         uses: actions/upload-artifact@v4
